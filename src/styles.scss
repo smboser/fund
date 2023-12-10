@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "material-icons/iconfont/material-icons.css";
+
+$primary-color: #a2185b;
+$text-color: #555555;
+$secondary-color: #ffffff;
+$primary-bg: #f6f8f8;
+$secondary-bg: #f2f2f4;
+
+html,
+body {
+  height: 100%;
+  color: $text-color;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.secondary-text {
+  color: $primary-color;
+}
+.primary-text {
+  color: $text-color;
+}

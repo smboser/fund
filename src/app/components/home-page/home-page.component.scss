@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+.primary-bg {
+  background-color: $primary-bg;
+}
+
+.secondary-bg {
+  background-color: $secondary-bg;
+}
+.white-bg {
+  background-color: #fff;
+}
+
+.invi {
+  color: #55555550;
+  cursor: pointer;
+}
+.invi:hover {
+  color: #555555;
+  transition: color 0.5 ease-out;
+}
+.footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+.custom-margin {
+  margin-left: 250px;
+}
+@media only screen and (max-width: 1024px) {
+  .custom-margin {
+    margin-left: 0 !important  ;
+  }
+}

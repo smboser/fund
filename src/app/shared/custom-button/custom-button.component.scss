@@ -1,0 +1,39 @@
+@import "../../../styles.scss";
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-disabled {
+  display: inline-block;
+}
+.primary {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background-color 0.1 ease-out, color 0.5s ease;
+  width: 100%;
+}
+.primary:hover {
+  background-color: transparent;
+  color: $primary-color;
+  transition-delay: 0.5s;
+  border: 1px solid $primary-color;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+  transition: background-color 0.1 ease-out, color 0.5s ease;
+}
+.secondary:hover {
+  background-color: $primary-color;
+  color: $secondary-color;
+  transition-delay: 0.5s;
+}

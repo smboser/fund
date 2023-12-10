@@ -1,0 +1,223 @@
+<!-- app.component.html -->
+
+<app-top-panel></app-top-panel>
+<!-- Adjust the margin based on the left panel width -->
+<!-- Your main content goes here -->
+
+<div class="flex lg:flex-row">
+  <!-- Left Column (Desktop Only) -->
+  <div
+    class="fixed top-0 left-0 hidden lg:block w-1/6 min-w-[250px] max-w-[250px] bg-white drop-shadow-2xl overflow-auto"
+  >
+    <div class="h-screen"><app-left-panel></app-left-panel></div>
+  </div>
+
+  <!-- Right Column (Mobile and Desktop) -->
+  <div class="min-w-0 lg:flex-1 w-full overflow-auto custom-margin">
+    <div>
+      <div>
+        <div class="primary-bg px-4 xm:px-8 lg:px-32 xl:px-48 text-base">
+          <div
+            class="text-large text-3xl md:text-5xl pt-8 md:pt-16 lg:pt-32 pb-4"
+          >
+            Actie voor Hoop
+          </div>
+          <div class="hidden md:block">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            vitae metus vitae dolor placerat volutpat. Etiam tempor quam ex,
+            eget semper est commodo vitae. Quisque porta mi nec mauris suscipit
+            viverra. Sed lobortis malesuada elit quis congue. Nunc dignissim,
+            nibh at auctor pretium, sem nibh dictum nisl, et interdum erat massa
+            quis enim. Sed eget turpis et eros efficitur dictum. Pellentesque
+            molestie tortor in semper egestas. Integer finibus suscipit quam, at
+            scelerisque elit fermentum cursus. Vivamus vulputate viverra lectus,
+            ac lobortis est efficitur at. Etiam aliquet a urna eu vulputate.
+            Etiam fermentum at massa ac interdum. Aenean lorem ex, bibendum sit
+            amet maximus sit amet, efficitur sed arcu. Pellentesque habitant
+            morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. In lacinia blandit odio, a interdum lacus sollicitudin
+            quis. Fusce sed purus quis ipsum tristique accumsan. Etiam viverra
+            nibh arcu, vitae pellentesque metus tempus nec. Maecenas efficitur
+            egestas ligula vel ultrices. Donec ut ornare enim. Nam elementum
+            tortor vel est iaculis mollis.
+          </div>
+          <div class="md:hidden">
+            <app-read-more
+              [text]="
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
+          metus vitae dolor placerat volutpat. Etiam tempor quam ex, eget semper est
+          commodo vitae. Quisque porta mi nec mauris suscipit viverra. Sed lobortis
+          malesuada elit quis congue. Nunc dignissim, nibh at auctor pretium, sem
+          nibh dictum nisl, et interdum erat massa quis enim. Sed eget turpis et
+          eros efficitur dictum. Pellentesque molestie tortor in semper egestas.
+          Integer finibus suscipit quam, at scelerisque elit fermentum cursus.
+          Vivamus vulputate viverra lectus, ac lobortis est efficitur at. Etiam
+          aliquet a urna eu vulputate. Etiam fermentum at massa ac interdum. Aenean
+          lorem ex, bibendum sit amet maximus sit amet, efficitur sed arcu.
+          Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+          ac turpis egestas. In lacinia blandit odio, a interdum lacus sollicitudin
+          quis. Fusce sed purus quis ipsum tristique accumsan. Etiam viverra nibh
+          arcu, vitae pellentesque metus tempus nec. Maecenas efficitur egestas
+          ligula vel ultrices. Donec ut ornare enim. Nam elementum tortor vel est
+          iaculis mollis.'
+              "
+              [maxLength]="200"
+            ></app-read-more>
+          </div>
+          <div
+            class="w-full md:flex md:justify-start md:items-center p-2 pt-12 pb-16"
+          >
+            <div class="md:pr-4 pb-2 md:pb-0">
+              <app-custom-button
+                [btnColor]="donateBtn.type"
+                [btnIcon]="donateBtn.icon"
+                [btnType]="donateBtn.type"
+                >{{ donateBtn.title }}</app-custom-button
+              >
+            </div>
+            <div class="">
+              <app-custom-button
+                [btnColor]="fndBtn.type"
+                [btnIcon]="fndBtn.icon"
+                [btnType]="fndBtn.type"
+                (click)="navigateToParticipate()"
+                >{{ fndBtn.title }}</app-custom-button
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Mobile chart and menu -->
+        <div
+          class="w-screen flex flex-col items-center justify-center md:hidden bg-white px-4 xm:px-8 lg:px-32 xl:px-48 text-base"
+        >
+          <app-left-menu class="w-full"></app-left-menu>
+          <app-left-chart></app-left-chart>
+        </div>
+        <!-- Mobile chart and menu -->
+        <!-- tablet chart and menu -->
+        <div class="border hidden md:block lg:hidden bg-white px-4">
+          <div class="flex justify-center items-center">
+            <div
+              class="flex-1 border-r bolder-solid border-[#d8d8d8] flex items-center justify-center"
+            >
+              <app-left-chart></app-left-chart>
+            </div>
+            <div class="flex-1">
+              <app-left-menu class="w-full"></app-left-menu>
+            </div>
+          </div>
+        </div>
+        <!-- tablet chart and menu -->
+        <!-- Still to go countdown timer -->
+        <div
+          class="w-full secondary-bg px-4 xm:px-8 lg:px-32 xl:px-48 text-base"
+        >
+          <div class="secondary-text pt-10 pb-10 text-3xl">Still to go</div>
+          <div class="secondary-text pb-10">[Countdown timer placeholder]</div>
+        </div>
+        <!-- Still to go countdown timer -->
+        <!---->
+        <div
+          class="w-full primary-bg pt-20 px-4 xm:px-8 lg:px-32 xl:px-48 text-base"
+        ></div>
+        <!---->
+        <!---->
+        <div
+          class="w-full secondary-bg px-4 xm:px-8 lg:px-32 xl:px-48 text-base"
+        >
+          <div class="secondary-text pt-8 text-3xl">Start fundraising!</div>
+          <div class="primary-text pb-10">
+            Create your fundraising page or join a team with friends,
+            co-workers, your sports team or class mates. Take a look at these
+            inspiring examples.
+          </div>
+          <div
+            class="primary-text md:flex md:justify-start md:items-center pb-10"
+          >
+            <div class="md:pr-4">
+              <app-custom-button
+                [btnColor]="fndBtn.type"
+                [btnIcon]="fndBtn.icon"
+                [btnType]="fndBtn.type"
+                >{{ fndBtn.title }}</app-custom-button
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Latest donations -->
+        <div class="w-full primary-bg px-4 xm:px-8 lg:px-32 xl:px-48 text-base">
+          <div class="secondary-text pt-2 pb-2">
+            <div class="flex pb-10 text-3xl">
+              <div class="">Latest donations</div>
+              <div class="pl-5 pr-5 hidden md:block">|</div>
+              <div class="primary-text hidden md:block">
+                <span class="invi">View All</span>
+              </div>
+            </div>
+            <div class="primary-text pb-4 md:pb-10">
+              [Donation list placeholder]
+            </div>
+            <div
+              class="primary-text block md:hidden w-full flex items-center justify-center"
+            >
+              <span class="invi">View All</span>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <!-- News Letter -->
+        <div class="w-full bg-white px-4 xm:px-8 lg:px-32 xl:px-48 text-base">
+          <div class="pt-10 pb-2 md:pb-10 flex">
+            <div class="flex-1 md:pb-10 md:border-r bolder-solid">
+              <div class="secondary-text p-4 text-3xl">
+                Subscribe to our newsletter
+              </div>
+              <div class="primary-text p-4">
+                Do you want to stay up to date about our activities? Subscribe
+                to our newsletter!
+              </div>
+              <div>
+                <div class="primary-text flex justify-start items-center p-4">
+                  <app-custom-button
+                    [btnColor]="donateBtn.type"
+                    [btnIcon]="'subscriptions'"
+                    [btnType]="donateBtn.type"
+                    >Subscribe</app-custom-button
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 primary-text pb-10 text-1 hidden md:block">
+              <div class="secondary-text p-4 text-3xl">More information</div>
+              <div class="primary-text p-4 flex flex-col border-b bolder-solid">
+                <div>Privacy</div>
+                <div>Terms and conditions</div>
+                <div>Cookies</div>
+              </div>
+              <div class="pt-5">
+                <div>
+                  <div class="secondary-text p-4 text-3xl">Follow us</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- News Letter -->
+        <!-- mobile follow us -->
+        <div
+          class="pt-2 md:hidden border-t bolder-solid w-full bg-white px-4 xm:px-8 lg:px-32 xl:px-48 text-base"
+        >
+          <div class="secondary-text p-4 text-3xl">Follow us</div>
+        </div>
+        <!-- mobile follow us-->
+        <!-- Footer -->
+        <div class="w-full footer px-4 xm:px-8 lg:px-32 xl:px-48 text-base">
+          <div class="text-sm pt-4 pb-4 flex items-center justify-center">
+            Made with &nbsp;<mat-icon class="text-sm">favorite</mat-icon>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>

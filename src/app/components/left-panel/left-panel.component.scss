@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.text-color {
+  color: $text-color;
+}
+
+.primary {
+  color: $primary-color;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.5rem); /* Adjust the distance the arrow moves */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-arrow:hover .animated-arrow {
+  animation: arrowAnimation 1s infinite; /* Adjust the duration as needed */
+}

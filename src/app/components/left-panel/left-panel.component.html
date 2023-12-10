@@ -1,0 +1,29 @@
+<!-- left-panel.component.html -->
+<div class="pt-5 text-color flex items-center justify-center">
+  <div>
+    <!-- Your left panel content goes here -->
+    <p class="pb-2 pt-2 pl-10">
+      <img src="assets/img/logo/logo.png" />
+    </p>
+    <app-left-menu></app-left-menu>
+    <app-left-chart></app-left-chart>
+    <div class="flex flex-col items-center justify-center p-2">
+      <div class="pb-3 pt-5 w-full">
+        <app-custom-button
+          [btnColor]="donateBtn.type"
+          [btnIcon]="donateBtn.icon"
+          [btnType]="donateBtn.type"
+          >{{ donateBtn.title }}</app-custom-button
+        >
+      </div>
+      <div class="w-full">
+        <app-custom-button
+          [btnColor]="fndBtn.type"
+          [btnIcon]="fndBtn.icon"
+          [btnType]="fndBtn.type"
+          >{{ fndBtn.title }}</app-custom-button
+        >
+      </div>
+    </div>
+  </div>
+</div>
