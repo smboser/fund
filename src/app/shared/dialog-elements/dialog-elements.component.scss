@@ -1,0 +1,14 @@
+@import "../../../styles.scss";
+
+.top-part {
+  background-color: $primary-color;
+}
+
+.icon-display {
+  transform: scale(5);
+}
+@media only screen and (max-width: 768px) {
+  .icon-display {
+    transform: scale(4);
+  }
+}

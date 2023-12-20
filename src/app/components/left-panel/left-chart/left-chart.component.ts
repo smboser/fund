@@ -1,5 +1,4 @@
 import { Component, ModuleWithProviders } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import {
   NgCircleProgressModule,
   CircleProgressOptions,

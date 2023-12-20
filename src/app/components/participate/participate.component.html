@@ -4,7 +4,108 @@
   </div>
   <div class="flex-grow back-img">
     <div class="layer flex items-center justify-center">
-      <div>[Form placeholder]</div>
+      <div>
+        <div class="pb-16 pt-4 px-32 flex items-center justify-center">
+          <!-- Slider progressbar-->
+          <progress-slider [percentage]="14"></progress-slider>
+        </div>
+        <!---->
+        <form [formGroup]="radioForm">
+          <mat-radio-group formControlName="selectedOption">
+            <div class="flex flex-row">
+              <div class="back-btn flex items-center justify-center p-8">
+                <app-rotate-button
+                  [isBack]="true"
+                  [navigate]="'/'"
+                  (handleClick)="toggle()"
+                  [isEnabled]="true"
+                ></app-rotate-button>
+              </div>
+              <div
+                class="flex flex-row inner-form"
+                [@slideInOut]
+                *ngIf="isShown"
+              >
+                <div
+                  class="basis-2/5 bg-pink text-white text-3xl flex items-center justify-center p-8"
+                >
+                  How do you want to participate?
+                </div>
+                <div class="flex-3/5 bg-white w-full shadow-2xl">
+                  <div
+                    class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
+                  >
+                    <div class="text-lg">
+                      <mat-radio-button
+                        class="example-radio-button"
+                        [value]="'indi'"
+                        ><span class="text-lg"
+                          >Individual</span
+                        ></mat-radio-button
+                      >
+                    </div>
+                    <div class="bg-pink text-white px-16 py-8">
+                      <mat-icon class="icon-display">person</mat-icon>
+                    </div>
+                  </div>
+                  <div
+                    class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
+                  >
+                    <div class="text-lg">
+                      <mat-radio-button
+                        class="example-radio-button"
+                        [value]="'team'"
+                        ><span class="text-lg">Team</span><br /><span
+                          class="text-lighter"
+                          >I want to start a team with multiple people</span
+                        ></mat-radio-button
+                      >
+                    </div>
+                    <div class="bg-pink text-white px-16 py-8">
+                      <mat-icon class="icon-display">people</mat-icon>
+                    </div>
+                  </div>
+                  <div
+                    class="flex justify-between py-12 pr-12 pl-8 items-center grey-hover"
+                  >
+                    <div class="text-lg">
+                      <mat-radio-button
+                        class="example-radio-button"
+                        [value]="'team_mem'"
+                        ><span class="text-lg">Team member</span><br /><span
+                          class="text-lighter"
+                          >I want to join an existing team</span
+                        ></mat-radio-button
+                      >
+                    </div>
+                    <div class="bg-pink text-white px-16 py-8">
+                      <mat-icon class="icon-display">person_add</mat-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fwd-btn flex items-center justify-center p-8">
+                <app-rotate-button
+                  [isBack]="false"
+                  [navigate]="nextForm"
+                  (handleClick)="toggle()"
+                  [isEnabled]="selectedOption?.invalid ? false : true"
+                ></app-rotate-button>
+              </div>
+            </div>
+          </mat-radio-group>
+        </form>
+        <!---->
+        <div
+          class="pt-16 pb-4 flex items-center justify-center text-white cursor-pointer"
+        >
+          <!-- Cancel dialog-->
+          <div (click)="openDialog()" class="pr-2">
+            <mat-icon> cancel_presentation</mat-icon>
+          </div>
+          <div (click)="openDialog()">Cancel</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

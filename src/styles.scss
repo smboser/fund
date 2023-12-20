@@ -10,6 +10,7 @@ $text-color: #555555;
 $secondary-color: #ffffff;
 $primary-bg: #f6f8f8;
 $secondary-bg: #f2f2f4;
+$lighter-text: #999999;
 
 html,
 body {
@@ -25,4 +26,17 @@ body {
 }
 .primary-text {
   color: $text-color;
+}
+.inner-form {
+  width: 850px;
+}
+
+// Manipulate initial background color
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+// Manipulate background color on hover and focus
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
 }

@@ -1,0 +1,36 @@
+<div class="text-white">
+  <div class="">
+    <button
+      class="rounded-full border-4 border focus:outline-none"
+      [class.anti-rotate]="isRotated && isBack"
+      [class.rotate]="isRotated && !isBack"
+      [class.h-20]="!isBack"
+      [class.w-20]="!isBack"
+      [class.h-12]="isBack"
+      [class.w-12]="isBack"
+      [class.p-4]="!isBack"
+      [class.p-2]="isBack"
+      [disabled]="!isEnabled || isRotated"
+      [matTooltip]="
+        !isEnabled && !isRotated
+          ? 'Please make sure everything is field in correctly'
+          : ''
+      "
+      [matTooltipPosition]="'above'"
+      (click)="rotateArrow()"
+      [ngClass]="{
+        'rotating-disable-button': isRotated,
+        'disable-button': !isEnabled && !isRotated,
+        'arrow-btn': isEnabled && !isRotated
+      }"
+      (click)="navigateTo()"
+    >
+      <mat-icon class="icon-display" [class.rev-icon-display]="isBack"
+        >arrow_right_alt</mat-icon
+      >
+    </button>
+  </div>
+  <div class="flex items-center justify-center pt-2">
+    {{ isBack ? "Go back" : "Continue" }}
+  </div>
+</div>

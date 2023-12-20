@@ -17,7 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
         (click)="toggleReadMore()"
         class="flex items-center justify-center border-t-2 border-solid border-[#d8d8d8]-300 pt-2"
       >
-        <a href="#" class="flex items-center justify-center"
+        <a class="flex items-center justify-center"
           >Read More <mat-icon>keyboard_arrow_down</mat-icon></a
         >
       </div>
@@ -25,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     <div *ngIf="isExpanded">
       {{ text }}
       <span (click)="toggleReadMore()"
-        ><a href="#" class="flex items-center justify-center"
+        ><a class="flex items-center justify-center"
           >Read Less <mat-icon>keyboard_arrow_up</mat-icon></a
         ></span
       >
@@ -42,6 +42,7 @@ export class ReadMoreComponent {
   isExpanded: boolean = false;
 
   toggleReadMore(): void {
+    console.log('isExpanded', this.isExpanded);
     this.isExpanded = !this.isExpanded;
   }
 }

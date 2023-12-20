@@ -1,11 +1,4 @@
-import {
-  Component,
-  ModuleWithProviders,
-  NgModule,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Component, ModuleWithProviders, OnInit } from '@angular/core';
 import {
   NgCircleProgressModule,
   CircleProgressOptions,

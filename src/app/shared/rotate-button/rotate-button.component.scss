@@ -1,0 +1,49 @@
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.rotate {
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes anti-rotate {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+.anti-rotate {
+  animation: anti-rotate 2s infinite linear;
+}
+
+.icon-display {
+  transform: scale(3);
+}
+
+.rev-icon-display {
+  transform: scaleX(-1);
+}
+
+.arrow-btn {
+  color: #fff;
+  border-color: #fff;
+}
+
+.disable-button {
+  border-color: #8e8886;
+  color: #8e8886;
+}
+
+.arrow-btn:hover {
+  color: #3a2f2d;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.rotating-disable-button {
+  border-color: #8e8886;
+  color: #3a2f2d;
+  background-color: #8e8886;
+}
