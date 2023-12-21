@@ -7,6 +7,7 @@ import { CustomButtonComponent } from '../../shared/custom-button/custom-button.
 import { DONATE_BTN, FUND_BTN } from '../../utils/const';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { LeftChartComponent } from './left-chart/left-chart.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-panel',
@@ -40,6 +41,7 @@ import { LeftChartComponent } from './left-chart/left-chart.component';
   ],
 })
 export class LeftPanelComponent implements OnInit {
+  constructor(private router: Router) {}
   options = new CircleProgressOptions();
   primary: any;
   donateBtn = DONATE_BTN;
@@ -47,5 +49,9 @@ export class LeftPanelComponent implements OnInit {
   ngOnInit(): void {
     //this.options.percent = 0;
     //this.options.percent = 75;
+  }
+
+  navigateToParticipate() {
+    this.router.navigate(['/participate/how-to-participate']);
   }
 }

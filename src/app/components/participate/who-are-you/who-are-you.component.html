@@ -19,7 +19,11 @@
               [isEnabled]="isBackEnabled"
             ></app-rotate-button>
           </div>
-          <div class="flex flex-row inner-form" [@slideInOut] *ngIf="isShown">
+          <div
+            class="flex flex-row inner-form h-[600px]"
+            [@slideInOut]
+            *ngIf="isShown"
+          >
             <div
               class="basis-2/5 bg-pink text-white flex flex-col items-center justify-center p-8"
             >
@@ -38,7 +42,7 @@
                 <div class="text-sm pl-4">Upload profile picture</div>
               </div>
               <div
-                class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] max-h-[500px] min-h-[250px] overflow-auto"
+                class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] max-h-[465px] min-h-[250px] overflow-auto"
               >
                 <!-- Form Panel -->
                 <!-- your-component.component.html -->
@@ -46,7 +50,7 @@
                 <!-- your-component.component.html -->
 
                 <form [formGroup]="form" class="w-full">
-                  <div class="w-full">
+                  <div class="w-full pt-8">
                     <mat-form-field appearance="fill" class="w-full">
                       <mat-label>First Name</mat-label>
                       <input matInput formControlName="firstName" required />
