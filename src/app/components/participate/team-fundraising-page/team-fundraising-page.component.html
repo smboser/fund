@@ -1,0 +1,168 @@
+<div class="h-screen flex flex-col">
+  <div class="flex-none items-center justify-start pl-4 p-2">
+    <img src="assets/img/logo/logo.png" class="w-[64px]" />
+  </div>
+  <div class="flex-grow back-img">
+    <div class="layer flex items-center justify-center">
+      <div>
+        <div class="pb-16 pt-4 px-32 flex items-center justify-center">
+          <!-- Slider progressbar-->
+          <progress-slider [percentage]="50"></progress-slider>
+        </div>
+        <!---->
+        <div class="flex flex-row">
+          <div class="back-btn flex items-center justify-center p-8">
+            <app-rotate-button
+              [isBack]="true"
+              [navigate]="'participate/team-page'"
+              (handleClick)="toggle()"
+              [isEnabled]="isBackEnabled"
+            ></app-rotate-button>
+          </div>
+          <div
+            class="flex flex-row inner-form h-[600px]"
+            [@slideInOut]
+            *ngIf="isShown"
+          >
+            <div
+              class="basis-2/5 bg-pink text-white flex flex-col items-center justify-center p-8"
+            >
+              <div class="flex-item text-3xl">Your personal page</div>
+              <div class="flex-item text-sm">
+                You can use your personal page to raise funds for Health
+                Foundation Limburg. Complete your page using text and images.
+                Personal stories do best!
+              </div>
+            </div>
+            <div class="flex-3/5 bg-white w-full shadow-2xl">
+              <div
+                class="flex justify-between pt-24 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] overflow-auto"
+              >
+                <!-- Form Panel -->
+                <!-- your-component.component.html -->
+
+                <!-- your-component.component.html -->
+
+                <form [formGroup]="form" class="w-full">
+                  <div class="w-full">
+                    <mat-form-field floatLabel="always" class="w-full">
+                      <mat-label>What is your fundraising goal?</mat-label>
+                      <input
+                        matInput
+                        formControlName="goal"
+                        type="number"
+                        placeholder="0"
+                        required
+                      />
+                      <span matTextPrefix>&euro;</span>
+                      <mat-icon
+                        matSuffix
+                        *ngIf="
+                          getFormControl('goal')?.invalid &&
+                          (getFormControl('goal')?.dirty ||
+                            getFormControl('goal')?.touched)
+                        "
+                        >cancel</mat-icon
+                      >
+                      <mat-icon matSuffix *ngIf="getFormControl('goal')?.valid"
+                        >check_circle</mat-icon
+                      >
+                      <mat-error *ngIf="getFormControl('goal')?.invalid"
+                        >The target amount is missing</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div>
+                    <mat-form-field appearance="fill" class="w-full">
+                      <mat-label>Choose a compelling title</mat-label>
+                      <input matInput formControlName="title" required />
+                      <mat-icon
+                        matSuffix
+                        *ngIf="
+                          getFormControl('title')?.invalid &&
+                          (getFormControl('title')?.dirty ||
+                            getFormControl('title')?.touched)
+                        "
+                        >cancel</mat-icon
+                      >
+                      <mat-icon matSuffix *ngIf="getFormControl('title')?.valid"
+                        >check_circle</mat-icon
+                      >
+                      <mat-error *ngIf="getFormControl('title')?.invalid"
+                        >The page title is missing</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div>
+                    <mat-form-field appearance="fill" class="w-full">
+                      <mat-label>What motivates you?</mat-label>
+                      <input matInput formControlName="motivate" required />
+                      <mat-icon
+                        matSuffix
+                        *ngIf="
+                          getFormControl('motivate')?.invalid &&
+                          (getFormControl('motivate')?.dirty ||
+                            getFormControl('motivate')?.touched)
+                        "
+                        >cancel</mat-icon
+                      >
+                      <mat-icon
+                        matSuffix
+                        *ngIf="getFormControl('motivate')?.valid"
+                        >check_circle</mat-icon
+                      >
+                      <mat-error *ngIf="getFormControl('motivate')?.invalid"
+                        >Your motivation is missing</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div class="pb-8 md:pb-16">
+                    <!--Photos-->
+                    <div class="py-4">Upload Photos</div>
+                    <div class="flex">
+                      <div class="icon-rectangle">
+                        <mat-icon class="icon-display">linked_camera</mat-icon>
+                      </div>
+                      <div class="icon-rectangle">
+                        <mat-icon class="icon-display">linked_camera</mat-icon>
+                      </div>
+                      <div class="icon-rectangle">
+                        <mat-icon class="icon-display">linked_camera</mat-icon>
+                      </div>
+                      <div class="icon-rectangle">
+                        <mat-icon class="icon-display">linked_camera</mat-icon>
+                      </div>
+                      <div class="icon-rectangle">
+                        <mat-icon class="icon-display">linked_camera</mat-icon>
+                      </div>
+                    </div>
+                    <!--Photos-->
+                  </div>
+                </form>
+                <!-- Form panel -->
+              </div>
+            </div>
+          </div>
+          <div class="fwd-btn flex items-center justify-center p-8">
+            <app-rotate-button
+              [isBack]="false"
+              [navigate]="nextForm"
+              (handleClick)="toggle()"
+              [isEnabled]="this.form.valid"
+            ></app-rotate-button>
+          </div>
+        </div>
+        <!---->
+        <div
+          class="pt-16 pb-4 flex items-center justify-center text-white cursor-pointer"
+        >
+          <!-- Cancel dialog-->
+          <div (click)="openDialog()" class="pr-2">
+            <mat-icon> cancel_presentation</mat-icon>
+          </div>
+          <div (click)="openDialog()">Cancel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

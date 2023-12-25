@@ -7,14 +7,14 @@
       <div>
         <div class="pb-16 pt-4 px-32 flex items-center justify-center">
           <!-- Slider progressbar-->
-          <progress-slider [percentage]="75"></progress-slider>
+          <progress-slider [percentage]="78"></progress-slider>
         </div>
         <!---->
         <div class="flex flex-row">
           <div class="back-btn flex items-center justify-center p-8">
             <app-rotate-button
               [isBack]="true"
-              [navigate]="'participate/start-donation'"
+              [navigate]="'participate/member-start-donation'"
               (handleClick)="toggle()"
               [isEnabled]="isBackEnabled"
             ></app-rotate-button>
@@ -27,7 +27,7 @@
             <div
               class="basis-2/5 bg-pink text-white flex flex-col items-center justify-center p-8"
             >
-              <div class="flex-item text-3xl">Check your data</div>
+              <div class="flex-item text-3xl">Almost done!</div>
               <div class="flex-item text-sm"></div>
             </div>
             <div class="flex-3/5 bg-white w-full shadow-2xl">

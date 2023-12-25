@@ -60,7 +60,7 @@ export class ParticipateComponent {
             this.nextForm = 'participate/who-are-you';
             break;
           case 'team':
-            this.nextForm = 'participate/who-are-you-team';
+            this.nextForm = 'participate/team-who-are-you';
             break;
           case 'team_mem':
             this.nextForm = 'participate/team-member';

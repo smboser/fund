@@ -1,0 +1,114 @@
+@import "../../../../styles.scss";
+.back-img {
+  background-image: url("../../../../assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg-pink {
+  background-color: $primary-color;
+}
+
+.icon-display {
+  transform: scale(2);
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  opacity: 0.5 !important; /*click effect color change*/
+  background-color: blue !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: blue !important; /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: blue !important; /*outer ring color change*/
+}
+
+.text-lighter {
+  color: $lighter-text;
+}
+
+.grey-hover {
+  cursor: pointer;
+}
+
+.grey-hover:hover {
+  background-color: #f7f7f7;
+}
+
+div {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+
+div.fade-out {
+  opacity: 0;
+}
+
+.icon-rectangle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; // Adjust the size of the circle as needed
+  height: 70px;
+  background-color: #ffffff; // Set the background color of the circle
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3); // Set the inset shadow inside the circle
+  transition: box-shadow 0.3s ease; // Add a smooth transition for the hover effect
+
+  mat-icon {
+    fill: #333333; // Set the color of the icon
+    height: auto;
+  }
+}
+
+.icon-rectangle:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); // Increase the inset shadow on hover
+}
+
+span.mat-prefix {
+  margin-right: 8px; /* Adjust the margin as needed */
+  font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; // Adjust the size of the circle as needed
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ffffff; // Set the background color of the circle
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); // Set the inset shadow inside the circle
+  transition: box-shadow 0.3s ease; // Add a smooth transition for the hover effect
+
+  mat-icon {
+    fill: #333333; // Set the color of the icon
+    height: auto;
+  }
+}
+
+.icon-circle:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); // Increase the inset shadow on hover
+}
