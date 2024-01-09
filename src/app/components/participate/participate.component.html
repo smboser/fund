@@ -1,103 +1,153 @@
 <div class="h-screen flex flex-col">
-  <div class="flex-none items-center justify-start pl-4 p-2">
-    <img src="assets/img/logo/logo.png" class="w-[64px]" />
+  <div
+    class="flex-none flex items-center justify-center lg:justify-start pl-4 p-2"
+  >
+    <a routerLink="/" class="cursor-pointer"
+      ><img
+        src="assets/img/logo/logo.png"
+        class="w-[40px] md:w-[48px] lg:w-[64px]"
+    /></a>
+  </div>
+  <div class="border-t border-[#6a6d71] lg:hidden">
+    <progress-slider [percentage]="14"></progress-slider>
   </div>
   <div class="flex-grow back-img">
-    <div class="layer flex items-center justify-center">
+    <div class="layer flex lg:items-center justify-center">
       <div>
-        <div class="pb-16 pt-4 px-32 flex items-center justify-center">
+        <!-- Mobile header-->
+        <div
+          class="flex items-center justify-center pt-16 pb-4 text-lg text-white lg:hidden"
+        >
+          How do you want to participate?
+        </div>
+        <!-- Mobile header-->
+        <div
+          class="pb-16 pt-4 px-32 flex items-center justify-center hidden lg:flex lg:items-center lg:justify-center"
+        >
           <!-- Slider progressbar-->
           <progress-slider [percentage]="14"></progress-slider>
         </div>
         <!---->
-        <form [formGroup]="radioForm">
-          <mat-radio-group formControlName="selectedOption">
-            <div class="flex flex-row">
-              <div class="back-btn flex items-center justify-center p-8">
+        <div class="bg-transparent px-2 py-2">
+          <form [formGroup]="radioForm">
+            <mat-radio-group formControlName="selectedOption">
+              <div class="flex flex-row">
+                <div
+                  class="back-btn flex items-center justify-center p-8 hidden lg:flex lg:items-center lg:justify-center"
+                >
+                  <app-rotate-button
+                    [isBack]="true"
+                    [navigate]="'/'"
+                    (handleClick)="toggle()"
+                    [isEnabled]="true"
+                  ></app-rotate-button>
+                </div>
+                <div
+                  class="flex flex-row inner-form lg:h-[600px]"
+                  [@slideInOut]
+                  *ngIf="isShown"
+                >
+                  <div
+                    class="basis-2/5 bg-pink text-white text-3xl flex items-center justify-center p-8 hidden lg:flex lg:items-center lg:justify-center"
+                  >
+                    How do you want to participate?
+                  </div>
+                  <div
+                    class="flex-3/5 bg-white w-full shadow-2xl rounded lg:rounded-none"
+                  >
+                    <div
+                      class="flex justify-between py-8 lg:py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
+                    >
+                      <div class="text-lg">
+                        <mat-radio-button
+                          class="example-radio-button"
+                          [value]="'indi'"
+                          ><span class="text-lg"
+                            >Individual</span
+                          ></mat-radio-button
+                        >
+                      </div>
+                      <div
+                        class="bg-pink text-white px-16 py-8 hidden lg:block"
+                      >
+                        <mat-icon class="icon-display">person</mat-icon>
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between py-8 lg:py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
+                    >
+                      <div class="text-lg">
+                        <mat-radio-button
+                          class="example-radio-button"
+                          [value]="'team'"
+                          ><span class="text-lg">Team</span><br /><span
+                            class="text-lighter"
+                            >I want to start a team with multiple people</span
+                          ></mat-radio-button
+                        >
+                      </div>
+                      <div
+                        class="bg-pink text-white px-16 py-8 hidden lg:block"
+                      >
+                        <mat-icon class="icon-display">people</mat-icon>
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between py-8 lg:py-12 pr-12 pl-8 items-center grey-hover"
+                    >
+                      <div class="text-lg">
+                        <mat-radio-button
+                          class="example-radio-button"
+                          [value]="'team_mem'"
+                          ><span class="text-lg">Team member</span><br /><span
+                            class="text-lighter"
+                            >I want to join an existing team</span
+                          ></mat-radio-button
+                        >
+                      </div>
+                      <div
+                        class="bg-pink text-white px-16 py-8 hidden lg:block"
+                      >
+                        <mat-icon class="icon-display">person_add</mat-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="fwd-btn flex items-center justify-center p-8 hidden lg:flex lg:items-center lg:justify-center"
+                >
+                  <app-rotate-button
+                    [isBack]="false"
+                    [navigate]="nextForm"
+                    (handleClick)="toggle()"
+                    [isEnabled]="selectedOption?.invalid ? false : true"
+                  ></app-rotate-button>
+                </div>
+              </div>
+              <!-- Mobile button -->
+              <div class="lg:hidden flex justify-between py-4">
                 <app-rotate-button
                   [isBack]="true"
                   [navigate]="'/'"
                   (handleClick)="toggle()"
+                  [isMobile]="true"
                   [isEnabled]="true"
                 ></app-rotate-button>
-              </div>
-              <div
-                class="flex flex-row inner-form h-[600px]"
-                [@slideInOut]
-                *ngIf="isShown"
-              >
-                <div
-                  class="basis-2/5 bg-pink text-white text-3xl flex items-center justify-center p-8"
-                >
-                  How do you want to participate?
-                </div>
-                <div class="flex-3/5 bg-white w-full shadow-2xl">
-                  <div
-                    class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
-                  >
-                    <div class="text-lg">
-                      <mat-radio-button
-                        class="example-radio-button"
-                        [value]="'indi'"
-                        ><span class="text-lg"
-                          >Individual</span
-                        ></mat-radio-button
-                      >
-                    </div>
-                    <div class="bg-pink text-white px-16 py-8">
-                      <mat-icon class="icon-display">person</mat-icon>
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between py-12 pr-12 pl-8 items-center border-b boder-solid border-[#d8d8d8] grey-hover"
-                  >
-                    <div class="text-lg">
-                      <mat-radio-button
-                        class="example-radio-button"
-                        [value]="'team'"
-                        ><span class="text-lg">Team</span><br /><span
-                          class="text-lighter"
-                          >I want to start a team with multiple people</span
-                        ></mat-radio-button
-                      >
-                    </div>
-                    <div class="bg-pink text-white px-16 py-8">
-                      <mat-icon class="icon-display">people</mat-icon>
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between py-12 pr-12 pl-8 items-center grey-hover"
-                  >
-                    <div class="text-lg">
-                      <mat-radio-button
-                        class="example-radio-button"
-                        [value]="'team_mem'"
-                        ><span class="text-lg">Team member</span><br /><span
-                          class="text-lighter"
-                          >I want to join an existing team</span
-                        ></mat-radio-button
-                      >
-                    </div>
-                    <div class="bg-pink text-white px-16 py-8">
-                      <mat-icon class="icon-display">person_add</mat-icon>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fwd-btn flex items-center justify-center p-8">
                 <app-rotate-button
                   [isBack]="false"
                   [navigate]="nextForm"
                   (handleClick)="toggle()"
+                  [isMobile]="true"
                   [isEnabled]="selectedOption?.invalid ? false : true"
                 ></app-rotate-button>
               </div>
-            </div>
-          </mat-radio-group>
-        </form>
+              <!-- Mobile button -->
+            </mat-radio-group>
+          </form>
+        </div>
         <!---->
         <div
-          class="pt-16 pb-4 flex items-center justify-center text-white cursor-pointer"
+          class="pt-4 lg:pt-16 pb-4 flex items-center justify-center text-white cursor-pointer"
         >
           <!-- Cancel dialog-->
           <div (click)="openDialog()" class="pr-2">

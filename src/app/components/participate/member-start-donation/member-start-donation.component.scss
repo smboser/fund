@@ -108,6 +108,12 @@ span.mat-prefix {
   border-radius: 5px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .amount-buttons button {
+    width: 60px !important;
+  }
+}
+
 .amount-buttons button.selected {
   background-color: #c26994;
 }

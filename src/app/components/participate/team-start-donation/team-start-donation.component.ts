@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-team-start-donation',
@@ -26,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    RouterModule,
   ],
   templateUrl: './team-start-donation.component.html',
   styleUrl: './team-start-donation.component.scss',

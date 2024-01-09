@@ -17,6 +17,7 @@ import {
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-participate',
@@ -42,6 +43,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     RotateButtonComponent,
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
 })
 export class ParticipateComponent {

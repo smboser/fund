@@ -17,6 +17,7 @@ export class RotateButtonComponent {
   @Input() navigate = '/';
   @Output() handleClick = new EventEmitter<boolean>();
   @Input() isEnabled = true;
+  @Input() isMobile = false;
 
   constructor(private router: Router) {}
 

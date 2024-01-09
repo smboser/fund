@@ -30,6 +30,12 @@ body {
 .inner-form {
   width: 850px;
 }
+@media only screen and (max-width: 1024px) {
+  .inner-form {
+    max-width: 560px !important;
+    width: 100% !important;
+  }
+}
 
 // Manipulate initial background color
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {

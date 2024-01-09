@@ -42,7 +42,7 @@ export class ReadMoreComponent {
   isExpanded: boolean = false;
 
   toggleReadMore(): void {
-    console.log('isExpanded', this.isExpanded);
+    // console.log('isExpanded', this.isExpanded);
     this.isExpanded = !this.isExpanded;
   }
 }

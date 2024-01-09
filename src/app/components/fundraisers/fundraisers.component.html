@@ -1,0 +1,21 @@
+<div
+  *ngFor="let item of fundraiserData.slice(0, 5)"
+  class="flex bg-white border border-[#f6f8f8] cursor-pointer"
+>
+  <div
+    [style.background]="'url(assets/img/fund-img.jpg) no-repeat center center'"
+    class="home-fund-img"
+  >
+    <div class="overlay"></div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-4 py-4 lg:px-6 lg:py-6"
+  >
+    <div>
+      <div class="secondary-text lg:text-2xl lg:hidden">&euro; 16</div>
+      <div class="secondary-text lg:text-2xl">Subhramlaya Bose</div>
+      <div>Team Ollie</div>
+    </div>
+    <div class="secondary-text text-2xl hidden lg:block">&euro; 16</div>
+  </div>
+</div>

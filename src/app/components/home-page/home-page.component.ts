@@ -11,6 +11,7 @@ import { LeftChartComponent } from '../left-panel/left-chart/left-chart.componen
 import { ReadMoreComponent } from '../../shared/read-more/read-more.component';
 import { LeftPanelComponent } from '../left-panel/left-panel.component';
 import { Router } from '@angular/router';
+import { FundraisersComponent } from '../fundraisers/fundraisers.component';
 
 @Component({
   selector: 'app-home-page',
@@ -28,6 +29,7 @@ import { Router } from '@angular/router';
     LeftChartComponent,
     ReadMoreComponent,
     LeftPanelComponent,
+    FundraisersComponent,
   ],
 })
 export class HomePageComponent {

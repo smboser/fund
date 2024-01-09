@@ -20,22 +20,28 @@ import {
 })
 export class ProgressSliderComponent implements OnInit {
   @Input() percentage: number = 0;
-  // @ViewChild('progressContainer')
-  // progressContainer!: ElementRef;
+  @ViewChild('progressContainer') progressContainer!: ElementRef;
   // @ViewChild('progressRef', { static: true }) progressRef!: ElementRef;
   // @ViewChild('percentageRef', { static: true }) percentageRef!: ElementRef;
   percentageWidth: number = 100;
-  constructor() // private elementRef: ElementRef,
-  // private cdr: ChangeDetectorRef,
-  // private renderer: Renderer2
-  {}
+  constructor(
+    //private renderer: Renderer2,
+    private cdr: ChangeDetectorRef // private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
-    const progressContainerWidth = 500;
-    this.percentageWidth = Math.ceil(
-      (this.percentage / 100) * progressContainerWidth
-    );
+    // const progressContainerWidth = 500;
+    // this.percentageWidth = Math.ceil(
+    //   (this.percentage / 100) * progressContainerWidth
+    // );
     // console.log('this.percentageWidth', this.percentageWidth);
+  }
+
+  ngAfterViewInit() {
+    const width = this.progressContainer.nativeElement.offsetWidth;
+    // console.log('Width:', width);
+    this.percentageWidth = Math.ceil((this.percentage / 100) * width);
+    this.cdr.detectChanges();
   }
 
   // ngAfterViewInit() {
